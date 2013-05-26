@@ -1,0 +1,31 @@
+{
+  "name": "sync-prompt",
+  "description": "Synchronously prompt your user for command-line input.",
+  "homepage": "https://github.com/shovon/sync-prompt",
+  "keywords": [
+    "command",
+    "line",
+    "io"
+  ],
+  "version": "0.0.0",
+  "author": {
+    "name": "Salehen Shovon Rahman",
+    "email": "salehen.rahman@gmail.com",
+    "url": "http://shovon.github.io"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shovon/sync-prompt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shovon/sync-prompt/issues"  
+  },
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/shovon/blob/master/LICENSE"  
+  },
+  "main": "./build/Release/sync_prompt"
+}
