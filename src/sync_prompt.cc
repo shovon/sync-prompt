@@ -9,7 +9,7 @@ using namespace std;
 Handle<Value> Prompt(const Arguments& args) {
   HandleScope scope;
   string retval;
-  cin >> retval;
+  getline(cin, retval);
   return scope.Close(String::New(retval.c_str()));
 }
 
