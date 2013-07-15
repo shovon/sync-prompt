@@ -1,1 +1,5 @@
 build
+.jshintrc
+.jshintignore
+.gitignore
+.travis.yml
