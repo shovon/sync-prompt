@@ -1,5 +1,7 @@
 # sync-prompt
 
+[![Build Status](https://travis-ci.org/shovon/sync-prompt.png)](https://travis-ci.org/shovon/sync-prompt) [![Dependency Status](https://gemnasium.com/shovon/sync-prompt.png)](https://gemnasium.com/shovon/sync-prompt)
+
 Synchronously prompt users for command-line input. Do more on Node.js, with less.
 
 ## Usage
