@@ -14,7 +14,7 @@
     "url": "http://shovon.github.io"
   },
   "scripts": {
-    "test": "node test.js"
+    "test": "./node_modules/mocha/bin/mocha && ./node_modules/jshint/bin/jshint ."
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
   },
   "main": "./lib/sync-prompt",
   "devDependencies": {
-    "sinon": "~1.7.3"
+    "sinon": "~1.7.3",
+    "jshint": "~2.1.4"
   }
 }
