@@ -30,6 +30,7 @@
   "main": "./lib/sync-prompt",
   "devDependencies": {
     "sinon": "~1.7.3",
-    "jshint": "~2.1.4"
+    "jshint": "~2.1.4",
+    "mocha": "~1.12.0"
   }
 }
