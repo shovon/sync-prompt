@@ -27,5 +27,8 @@
     "type": "MIT",
     "url": "https://github.com/shovon/blob/master/LICENSE"
   },
-  "main": "./build/Release/sync_prompt"
+  "main": "./lib/sync-prompt",
+  "devDependencies": {
+    "sinon": "~1.7.3"
+  }
 }
