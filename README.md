@@ -28,6 +28,20 @@ When called, it will prompt the user for a command line input.
 
 Optionally, you can pass in a string argument, and it will be displayed to the console. Note: unlike Node.js' `console.log`, the string will not end with a newline character.
 
+## Running Tests
+
+Be sure that you have the dependencies installed, locally, for the project:
+
+```shell
+npm install
+```
+
+And then run the tests:
+
+```shell
+npm test
+```
+
 ## Licence
 
 Unless stated in file headers, the license is found in the `LICENSE` file.
