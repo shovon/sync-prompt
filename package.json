@@ -7,14 +7,16 @@
     "line",
     "io"
   ],
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": {
     "name": "Salehen Shovon Rahman",
     "email": "salehen.rahman@gmail.com",
     "url": "http://shovon.github.io"
   },
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha && ./node_modules/jshint/bin/jshint ."
+    "test": "./node_modules/mocha/bin/mocha && ./node_modules/jshint/bin/jshint .",
+    "coverage": "./node_modules/istanbul/lib/cli.js cover _mocha -- -u exports -R spec",
+    "coveralls": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "repository": {
     "type": "git",
@@ -31,6 +33,9 @@
   "devDependencies": {
     "sinon": "~1.7.3",
     "jshint": "~2.1.4",
-    "mocha": "~1.12.0"
+    "mocha": "~1.12.0",
+    "istanbul": "~0.1.44",
+    "coveralls": "~2.3.0",
+    "mocha-lcov-reporter": "0.0.1"
   }
 }
