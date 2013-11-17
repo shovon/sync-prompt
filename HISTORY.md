@@ -1,5 +1,8 @@
 # History
 
+- v0.2.1
+  - fixed erratum in README.md
+
 - v0.2.0
   - added an optional paramter to `.prompt`--`hidden`. If set to true, the output will not be displayed as the user types. It's great for passwords
   - some code formatting changes
