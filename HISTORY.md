@@ -1,5 +1,11 @@
 # History
 
+- v0.2.0
+  - added an optional paramter to `.prompt`--`hidden`. If set to true, the output will not be displayed as the user types. It's great for passwords
+  - some code formatting changes
+  - updates to unit tests
+  - added a script to view code coverage report
+
 - v0.1.0
   - converted the API to accept a string parameter, and display to stdout.
 
