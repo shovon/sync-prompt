@@ -1,5 +1,8 @@
 # History
 
+- v0.2.2
+  - GCC 4.7 now successfully compiles sync-prompt
+
 - v0.2.1
   - fixed erratum in README.md
 

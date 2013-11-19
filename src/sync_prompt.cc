@@ -3,6 +3,10 @@
 #include <iostream>
 #include <string>
 
+#ifndef WIN32
+#include <unistd.h>
+#endif
+
 using namespace v8;
 using namespace std;
 
