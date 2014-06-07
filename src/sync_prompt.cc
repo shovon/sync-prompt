@@ -2,6 +2,7 @@
 #include <v8.h>
 #include <iostream>
 #include <string>
+#include <termios.h>
 
 #ifndef WIN32
 #include <unistd.h>
