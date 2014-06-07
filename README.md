@@ -1,6 +1,6 @@
 # sync-prompt
 
-[![Build Status](https://travis-ci.org/shovon/sync-prompt.png)](https://travis-ci.org/shovon/sync-prompt) [![Dependency Status](https://gemnasium.com/shovon/sync-prompt.png)](https://gemnasium.com/shovon/sync-prompt) [![Coverage Status](https://coveralls.io/repos/shovon/sync-prompt/badge.png)](https://coveralls.io/r/shovon/sync-prompt)
+[![Build Status](https://travis-ci.org/shovon/sync-prompt.png)](https://travis-ci.org/shovon/sync-prompt) [![Dependency Status](https://gemnasium.com/shovon/sync-prompt.png)](https://gemnasium.com/shovon/sync-prompt) [![Coverage Status](https://coveralls.io/repos/shovon/sync-prompt/badge.png)](https://coveralls.io/r/shovon/sync-prompt) [![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=shovon&url=https://github.com/shovon/sync-prompt&title=Synchronous%20Prompt%20for%20Node.js&language=English&tags=github&category=software
 
 Synchronously prompt users for command-line input. Do more on Node.js, with less.
 
@@ -19,8 +19,7 @@ var name = prompt('What is your name? ');
 console.log('Hello, ' + name + '!');
 // -> Hello, Mike!
 
-var hidden = true;
-var password = prompt('Password: ', hidden);
+var password = prompt.hidden('Password: ');
 // User enters a password, but nothing will be written to the screen.
 ```
 
@@ -28,7 +27,7 @@ var password = prompt('Password: ', hidden);
 
 ### `.prompt([question [, hidden = false]])`
 
-When called, it will prompt the user for a command line input.
+When called, it will prompt the user for a command-line input.
 
 #### Parameters
 
@@ -38,11 +37,23 @@ Type: `string`. Default value: undefined. Optional
 
 When set to a string, the value of `question` will be outputed to the console.
 
-**hidden**
+**hidden** Deprecated
 
 Type: `boolean`. Default value: undefined. Optional, but requires `question` to be set to a string.
 
 When set to true, none of the user's input will be written to the console. This is great for passwords.
+
+### `.prompt.hidden([question])`
+
+When called, it will prompt the user for a command-line input, while whatever is typed will not be echoed out to the screen.
+
+#### Parameters
+
+**question**
+
+Type `string`. Default value: undefined. Optional
+
+When set to a string, the value of `question` will be outputed to the console.
 
 ## Running Tests
 

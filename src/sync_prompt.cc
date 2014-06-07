@@ -47,12 +47,12 @@ string prompt() {
   return retval;
 }
 
-Handle<Value> HiddenPrompt(const Arguments& args) {
+Handle<Value> SetStdinEcho(const Arguments& args) {
   HandleScope scope;
-  setStdinEcho(false);
-  string retval = prompt();
-  setStdinEcho(true);
-  return scope.Close(String::New(retval.c_str()));
+  Local<Value> undefined;
+
+  setStdinEcho(args[0]->BooleanValue());
+  return scope.Close(undefined);
 }
 
 Handle<Value> Prompt(const Arguments& args) {
@@ -64,8 +64,8 @@ Handle<Value> Prompt(const Arguments& args) {
 void init(Handle<Object> exports) {
   exports->Set(String::NewSymbol("prompt"),
     FunctionTemplate::New(Prompt)->GetFunction());
-  exports->Set(String::NewSymbol("hiddenPrompt"),
-    FunctionTemplate::New(HiddenPrompt)->GetFunction());
+  exports->Set(String::NewSymbol("setStdinEcho"),
+    FunctionTemplate::New(SetStdinEcho)->GetFunction());
 }
 
 NODE_MODULE(sync_prompt, init)

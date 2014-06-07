@@ -1,5 +1,10 @@
 # History
 
+- v0.3.0
+  - added a `prompt.hidden` method
+  - deprecated the `hidden` parameter being passed to the `prompt` function, in favour of `prompt.hidden`. The parameter will still be available, just that it may be removed in a future release
+  - fixed a bug where a new-line was not appended after a hidden prompt
+
 - v0.2.2
   - GCC 4.7 now successfully compiles sync-prompt
 
@@ -7,7 +12,7 @@
   - fixed erratum in README.md
 
 - v0.2.0
-  - added an optional paramter to `.prompt`--`hidden`. If set to true, the output will not be displayed as the user types. It's great for passwords
+  - added an optional parameter to `.prompt`--`hidden`. If set to true, the output will not be displayed as the user types. It's great for passwords
   - some code formatting changes
   - updates to unit tests
   - added a script to view code coverage report

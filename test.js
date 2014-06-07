@@ -11,13 +11,13 @@ describe('syncPrompt.prompt', function () {
   beforeEach(function () {
     sinon.stub(process.stdout, 'write');
     sinon.stub(_syncPrompt, 'prompt');
-    sinon.stub(_syncPrompt, 'hiddenPrompt');
+    sinon.stub(_syncPrompt, 'setStdinEcho');
   });
 
   afterEach(function () {
     process.stdout.write.restore();
     _syncPrompt.prompt.restore();
-    _syncPrompt.hiddenPrompt.restore();
+    _syncPrompt.setStdinEcho.restore();
   });
 
   describe('without arguments', function () {
@@ -25,7 +25,7 @@ describe('syncPrompt.prompt', function () {
       prompt();
       assert(!process.stdout.write.called);
       assert(_syncPrompt.prompt.called);
-      assert(!_syncPrompt.hiddenPrompt.called);
+      assert(!_syncPrompt.setStdinEcho.called);
     });
   });
 
@@ -35,7 +35,7 @@ describe('syncPrompt.prompt', function () {
       prompt(question);
       assert(process.stdout.write.calledWith(question));
       assert(_syncPrompt.prompt.called);
-      assert(!_syncPrompt.hiddenPrompt.called);
+      assert(!_syncPrompt.setStdinEcho.called);
     });
 
     it('should display something, even given an empty string', function () {
@@ -43,23 +43,25 @@ describe('syncPrompt.prompt', function () {
       prompt(empty);
       assert(process.stdout.write.calledWith(empty));
       assert(_syncPrompt.prompt.called);
-      assert(!_syncPrompt.hiddenPrompt.called);
+      assert(!_syncPrompt.setStdinEcho.called);
     });
 
     it('should not display something, given a non-string', function () {
       // It's truthy, but not a string.
-      prompt(true);
-      assert(!process.stdout.write.called);
+      prompt.hidden();
+      assert(process.stdout.write.calledOnce);
       assert(_syncPrompt.prompt.called);
-      assert(!_syncPrompt.hiddenPrompt.called);
+      assert(_syncPrompt.setStdinEcho.firstCall.calledWith(false));
+      assert(_syncPrompt.setStdinEcho.secondCall.calledWith(true));
     });
 
     it('should have disabled stdout, given true as the last parameter', function () {
       var question = 'What is your name? ';
-      prompt(question, true);
+      prompt.hidden(question);
       assert(process.stdout.write.calledWith(question));
-      assert(!_syncPrompt.prompt.called);
-      assert(_syncPrompt.hiddenPrompt.called);
+      assert(_syncPrompt.prompt.called);
+      assert(_syncPrompt.setStdinEcho.firstCall.calledWith(false));
+      assert(_syncPrompt.setStdinEcho.secondCall.calledWith(true));
     });
   });
 });
