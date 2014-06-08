@@ -1,13 +1,21 @@
 {
   "name": "sync-prompt",
-  "description": "Synchronously prompt your user for command-line input.",
+  "description": "The missing prompt function for Node.js.",
   "homepage": "https://github.com/shovon/sync-prompt",
   "keywords": [
     "command",
     "line",
-    "io"
+    "io",
+    "cli",
+    "commandline",
+    "commandlineinterface",
+    "commandlineinput",
+    "input",
+    "output",
+    "stdin",
+    "synchronous"
   ],
-  "version": "0.3.1",
+  "version": "0.3.2",
   "author": {
     "name": "Salehen Shovon Rahman",
     "email": "salehen.rahman@gmail.com",
