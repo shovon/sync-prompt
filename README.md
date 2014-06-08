@@ -4,7 +4,7 @@
 
 [![Build Status](https://travis-ci.org/shovon/sync-prompt.png)](https://travis-ci.org/shovon/sync-prompt) [![Dependency Status](https://gemnasium.com/shovon/sync-prompt.png)](https://gemnasium.com/shovon/sync-prompt) [![Coverage Status](https://coveralls.io/repos/shovon/sync-prompt/badge.png)](https://coveralls.io/r/shovon/sync-prompt) [![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=shovon&url=https://github.com/shovon/sync-prompt&title=Synchronous%20Prompt%20for%20Node.js&language=English&tags=github&category=software)
 
-You know how the browser has the `prompt` function that *actually* returns what the user entered, and not just require that you grab the value via a callback? Welp, Node.js doesn't have one, until now! Just like in the browser, call `prompt` and you should be able to prompt users via the command line!
+You know how the browser has the `prompt` function that *actually* returns what the user entered, and not just require that you grab the value via a callback? Welp, Node.js doesn't have one, until now! Just like in the browser, call `prompt` and you should be able to prompt users via the command line! No callback hell!
 
 ## Usage
 
