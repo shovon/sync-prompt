@@ -1,6 +1,6 @@
 # sync-prompt
 
-**The missing prompt function for Node.js.**
+**The missing prompt function for Node.js**
 
 [![Build Status](https://travis-ci.org/shovon/sync-prompt.png)](https://travis-ci.org/shovon/sync-prompt) [![Dependency Status](https://gemnasium.com/shovon/sync-prompt.png)](https://gemnasium.com/shovon/sync-prompt) [![Coverage Status](https://coveralls.io/repos/shovon/sync-prompt/badge.png)](https://coveralls.io/r/shovon/sync-prompt) [![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=shovon&url=https://github.com/shovon/sync-prompt&title=Synchronous%20Prompt%20for%20Node.js&language=English&tags=github&category=software)
 

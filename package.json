@@ -1,6 +1,6 @@
 {
   "name": "sync-prompt",
-  "description": "The missing prompt function for Node.js.",
+  "description": "The missing prompt function for Node.js",
   "homepage": "https://github.com/shovon/sync-prompt",
   "keywords": [
     "command",
