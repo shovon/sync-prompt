@@ -43,6 +43,8 @@ When set to a string, the value of `question` will be outputed to the console.
 
 Type: `boolean`. Default value: undefined. Optional, but requires `question` to be set to a string.
 
+**Please consider avoiding the use of `.prompt('some qustion', true)`. Instead, consider using `.prompt.hidden('some question')`. The former is deprecated, and will be removed in a future release.**
+
 When set to true, none of the user's input will be written to the console. This is great for passwords.
 
 ### `.prompt.hidden([question])`
