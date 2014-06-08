@@ -48,6 +48,16 @@ string prompt() {
   return retval;
 }
 
+#if NODE_MODULE_VERSION > 0x000B
+void SetStdinEcho(const FunctionCallbackInfo<Value>& args) {
+  Isolate * isolate = Isolate::GetCurrent();
+  HandleScope scope(isolate);
+  Local<Value> undefined;
+
+  setStdinEcho(args[0]->BooleanValue());
+  args.GetReturnValue().Set(undefined);
+}
+#else
 Handle<Value> SetStdinEcho(const Arguments& args) {
   HandleScope scope;
   Local<Value> undefined;
@@ -55,18 +65,33 @@ Handle<Value> SetStdinEcho(const Arguments& args) {
   setStdinEcho(args[0]->BooleanValue());
   return scope.Close(undefined);
 }
+#endif
 
+#if NODE_MODULE_VERSION > 0x000B
+void Prompt(const FunctionCallbackInfo<Value>& args) {
+  Isolate * isolate = Isolate::GetCurrent();
+  HandleScope scope(isolate);
+  string retval = prompt();
+  args.GetReturnValue().Set(String::NewFromUtf8(isolate, retval.c_str()));
+}
+#else
 Handle<Value> Prompt(const Arguments& args) {
   HandleScope scope;
   string retval = prompt();
-  return scope.Close(String::New(retval.c_str()));
+  return scope.Close(String::NewFromUtf8(retval.c_str()));
 }
+#endif
 
 void init(Handle<Object> exports) {
+#if NODE_MODULE_VERSION > 0x000B
+  NODE_SET_METHOD(exports, "prompt", Prompt);
+  NODE_SET_METHOD(exports, "setStdinEcho", SetStdinEcho);
+#else
   exports->Set(String::NewSymbol("prompt"),
     FunctionTemplate::New(Prompt)->GetFunction());
   exports->Set(String::NewSymbol("setStdinEcho"),
     FunctionTemplate::New(SetStdinEcho)->GetFunction());
+#endif
 }
 
 NODE_MODULE(sync_prompt, init)
