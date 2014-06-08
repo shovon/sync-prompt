@@ -4,6 +4,7 @@
   - added a `prompt.hidden` method
   - deprecated the `hidden` parameter being passed to the `prompt` function, in favour of `prompt.hidden`. The parameter will still be available, just that it may be removed in a future release
   - fixed a bug where a new-line was not appended after a hidden prompt
+  - added support for Node.js v0.11
 
 - v0.2.2
   - GCC 4.7 now successfully compiles sync-prompt

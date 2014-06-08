@@ -78,7 +78,7 @@ void Prompt(const FunctionCallbackInfo<Value>& args) {
 Handle<Value> Prompt(const Arguments& args) {
   HandleScope scope;
   string retval = prompt();
-  return scope.Close(String::NewFromUtf8(retval.c_str()));
+  return scope.Close(String::New(retval.c_str()));
 }
 #endif
 
