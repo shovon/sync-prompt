@@ -42,8 +42,19 @@ void setStdinEcho(bool enable) {
 #endif
 }
 
+#if NODE_MODULE_VERSION > 0x000B
+string prompt(Isolate * isolate) {
+#else
 string prompt() {
+#endif
   string retval;
+  if (cin.eof()) {
+#if NODE_MODULE_VERSION > 0x000B
+    isolate->ThrowException(String::NewFromUtf8(isolate, "Console input has reached the end."));
+#else
+    ThrowException(String::New("Console input has reached the end."));
+#endif
+  }
   getline(cin, retval);
   return retval;
 }
@@ -71,7 +82,7 @@ Handle<Value> SetStdinEcho(const Arguments& args) {
 void Prompt(const FunctionCallbackInfo<Value>& args) {
   Isolate * isolate = Isolate::GetCurrent();
   HandleScope scope(isolate);
-  string retval = prompt();
+  string retval = prompt(isolate);
   args.GetReturnValue().Set(String::NewFromUtf8(isolate, retval.c_str()));
 }
 #else
