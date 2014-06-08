@@ -4,3 +4,5 @@ node_js:
   - "0.10"
 before_install:
   - "npm build"
+after_script:
+  - "npm run coveralls"
