@@ -1,5 +1,7 @@
 # History
 
+- v0.3.1
+  - a version bump from v0.3.0 to v0.3.1. There are absolutely no bug fixes in this one. I was simply not able to publish to v0.3.0, because I was too eager to publish to v0.3.0, but not actually wanting to publish it. But now, it seems NPM does not allow us to [overrite changes to a particular version](https://github.com/npm/npm-registry-couchapp/issues/148).
 - v0.3.0
   - added a `prompt.hidden` method
   - deprecated the `hidden` parameter being passed to the `prompt` function, in favour of `prompt.hidden`. The parameter will still be available, just that it may be removed in a future release
