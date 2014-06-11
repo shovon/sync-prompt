@@ -59,6 +59,10 @@ Type `string`. Default value: undefined. Optional
 
 When set to a string, the value of `question` will be outputed to the console.
 
+### `.prompt.isEOF()`
+
+Returns true if the console input (stdlib's cin) has reached EOF. False otherwise.
+
 ## Running Tests
 
 Be sure that you have the dependencies installed, locally, for the project:

@@ -1,5 +1,8 @@
 # History
 
+- v0.4
+  - Added a `isEOF` method. This allows us to check to see if `cin` has reached EOF.
+
 - v0.3.2
   - Just like v0.3.1, there's absolutely no bug fixes. Just some marketing fluff update.
 

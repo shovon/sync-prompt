@@ -48,13 +48,6 @@ string prompt(Isolate * isolate) {
 string prompt() {
 #endif
   string retval;
-  if (cin.eof()) {
-#if NODE_MODULE_VERSION > 0x000B
-    isolate->ThrowException(String::NewFromUtf8(isolate, "Console input has reached the end."));
-#else
-    ThrowException(String::New("Console input has reached the end."));
-#endif
-  }
   getline(cin, retval);
   return retval;
 }
@@ -93,15 +86,32 @@ Handle<Value> Prompt(const Arguments& args) {
 }
 #endif
 
+#if NODE_MODULE_VERSION > 0x000B
+void IsEOF(const FunctionCallbackInfo<Value>& args) {
+  Isolate * isolate = Isolate::GetCurrent();
+  HandleScope scope(isolate);
+  string retval = prompt(isolate);
+  args.GetReturnValue().Set(Boolean::New(isolate, cin.eof()));
+}
+#else
+Handle<Value> IsEOF(const Arguments& args) {
+  HandleScope scope;
+  return scope.Close(Boolean::New(cin.eof()));
+}
+#endif
+
 void init(Handle<Object> exports) {
 #if NODE_MODULE_VERSION > 0x000B
   NODE_SET_METHOD(exports, "prompt", Prompt);
   NODE_SET_METHOD(exports, "setStdinEcho", SetStdinEcho);
+  NODE_SET_METHOD(exports, "isEOF", IsEOF);
 #else
   exports->Set(String::NewSymbol("prompt"),
     FunctionTemplate::New(Prompt)->GetFunction());
   exports->Set(String::NewSymbol("setStdinEcho"),
     FunctionTemplate::New(SetStdinEcho)->GetFunction());
+  exports->Set(String::NewSymbol("isEOF"),
+    FunctionTemplate::New(IsEOF)->GetFunction());
 #endif
 }
 
