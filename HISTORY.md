@@ -1,6 +1,9 @@
 # History
 
-- v0.4
+- v0.4.1
+  - Removed dependency of `termios.h`. Including it prevents sync-prompt from compiling on Windows.
+
+- v0.4.0
   - Added a `isEOF` method. This allows us to check to see if `cin` has reached EOF.
 
 - v0.3.2
