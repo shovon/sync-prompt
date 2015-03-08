@@ -1,4 +1,4 @@
-{
+e{
   "name": "sync-prompt",
   "description": "The missing prompt function for Node.js",
   "homepage": "https://github.com/shovon/sync-prompt",
@@ -15,10 +15,10 @@
     "stdin",
     "synchronous"
   ],
-  "version": "0.4.1",
+  "version": "0.4.2",
   "author": {
     "name": "Salehen Shovon Rahman",
-    "email": "salehen.rahman@gmail.com",
+    "email": "sal@linux.com",
     "url": "http://shovon.github.io"
   },
   "scripts": {
