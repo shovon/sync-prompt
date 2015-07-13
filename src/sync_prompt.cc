@@ -7,6 +7,7 @@
 #include <windows.h>
 #else
 #include <unistd.h>
+#include <termios.h>
 #endif
 
 using namespace v8;
