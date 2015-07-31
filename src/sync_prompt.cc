@@ -3,8 +3,11 @@
 #include <iostream>
 #include <string>
 
-#ifndef WIN32
+#ifdef WIN32
+#include <windows.h>
+#else
 #include <unistd.h>
+#include <termios.h>
 #endif
 
 using namespace v8;
