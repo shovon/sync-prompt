@@ -2,6 +2,7 @@
 #include <v8.h>
 #include <iostream>
 #include <string>
+#include <cstdlib>
 
 #ifdef WIN32
 #include <windows.h>
@@ -50,6 +51,7 @@ string prompt(Isolate * isolate) {
 string prompt() {
 #endif
   string retval;
+  if(cin.peek() == EOF) exit(0);
   getline(cin, retval);
   return retval;
 }
